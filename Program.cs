@@ -9,7 +9,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IForecasts, FakeForecasts>();
+// builder.Services.AddScoped<IForecasts, FakeForecasts>();
+// builder.Services.AddScoped<IForecasts, SelfUpdatingForecasts>();
+builder.Services.AddSingleton<IForecasts, SelfUpdatingForecasts>();
 
 var app = builder.Build();
 
