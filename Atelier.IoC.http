@@ -1,0 +1,6 @@
+@Atelier.IoC_HostAddress = http://localhost:5196
+
+GET {{Atelier.IoC_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
