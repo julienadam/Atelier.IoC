@@ -12,8 +12,8 @@ builder.Services.AddSwaggerGen();
 // builder.Services.AddScoped<IForecasts, FakeForecasts>();
 // builder.Services.AddScoped<IForecasts, SelfUpdatingForecasts>();
 // builder.Services.AddSingleton<IForecasts, SelfUpdatingForecasts>();
-builder.Services.AddSingleton<IForecasts, OpenMeteoForecasts>();
-
+builder.Services.AddSingleton<OpenMeteoForecasts>();
+builder.Services.AddSingleton<IForecasts, ThrottledForecasts<OpenMeteoForecasts>>();
 
 var app = builder.Build();
 
